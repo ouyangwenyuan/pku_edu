@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical">
+
+    <include layout="@layout/public_title" />
+
+    <com.pku.pkuapp.widget.SlideShowView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/slide_pic_height"></com.pku.pkuapp.widget.SlideShowView>
+
+    <!--<FrameLayout-->
+    <!--android:id="@+id/show_pictures"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="250dp"-->
+    <!--android:layout_gravity="top">-->
+
+    <!--&lt;!&ndash;<include layout="@layout/item_sliding_picture" />&ndash;&gt;-->
+
+    <!--</FrameLayout>-->
+
+    <FrameLayout
+        android:id="@+id/show_menu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical">
+
+            <include layout="@layout/frag_0_menu" />
+
+        </FrameLayout>
+
+    </FrameLayout>
+
+</LinearLayout>

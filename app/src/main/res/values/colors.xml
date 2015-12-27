@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="main_theme">#ed4c4f</color>
+    <color name="main_dark_theme">#999999</color>
+    <color name="title_bg_color">#eeeeee</color>
+</resources>

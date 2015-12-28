@@ -13,4 +13,33 @@
         <item name="android:shadowRadius">1</item>
         <item name="android:textSize">14dp</item>
     </style>
+
+    <style name="mine_btn_text">
+        <item name="android:layout_marginLeft">@dimen/fifteen_dip</item>
+        <item name="android:layout_marginRight">@dimen/fifteen_dip</item>
+        <item name="android:layout_marginTop">@dimen/ten_dip</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/main_dark_theme</item>
+    </style>
+
+    <style name="main_dark_text">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/main_dark_theme</item>
+    </style>
+
+    <style name="main_light_text">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="ProgressBar_Mini" parent="@android:style/Widget.ProgressBar.Horizontal">
+        <item name="android:maxHeight">50dip</item>
+        <item name="android:minHeight">8dip</item>
+        <item name="android:indeterminateOnly">false</item>
+        <item name="android:indeterminateDrawable">
+            @android:drawable/progress_indeterminate_horizontal
+        </item>
+        <item name="android:progressDrawable">@drawable/progressbar_mini</item>
+    </style>
 </resources>

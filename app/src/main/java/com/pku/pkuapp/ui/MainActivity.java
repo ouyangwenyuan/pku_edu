@@ -29,7 +29,7 @@ public class MainActivity extends BaseActivity {
         //  sp = MeiyunApplication.getSharedPreferencesUtil();
         tabStrings = new String[]{getString(R.string.tab_main_name), getString(R.string.tab_course_name), getString(R.string.tab_mine_name)};
         tabIcons = new int[]{R.drawable.tab_main_bg, R.drawable.tab_course_bg, R.drawable.tab_mine_bg};
-        fragments = new Class[]{Frag0.class, Frag1.class, Frag2.class};
+        fragments = new Class[]{MainFragment.class, CourseFragment.class, MineFragment.class};
 
         tabHost = (FragmentTabHost) findViewById(android.R.id.tabhost);
         tabHost.setup(this, getSupportFragmentManager(), android.R.id.tabcontent);

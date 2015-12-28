@@ -1,11 +1,136 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/show_picture_0"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_settting"
+            android:layout_width="@dimen/thirty_six_dip"
+            android:layout_height="@dimen/twenty_four_dip"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/fifteen_dip"
+            android:layout_marginTop="@dimen/ten_dip"
+            android:text="设置"
+            android:textColor="@android:color/white" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
+
+            <ImageView
+                android:id="@+id/iv_user_avatar"
+                android:layout_width="@dimen/eighty_dip"
+                android:layout_height="@dimen/eighty_dip"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/menu_1" />
+
+            <TextView
+                android:id="@+id/tv_user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/iv_user_avatar"
+                android:layout_centerHorizontal="true"
+                android:text="name"
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="mine tab" />
-</FrameLayout>
+        android:layout_below="@id/tv_settting"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/fourty_eight_dip"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/pb_connect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/add_head" />
+
+            <TextView
+                android:id="@+id/tv_connect_state"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/pb_connect"
+                android:layout_centerHorizontal="true"
+                android:text="连接"
+                android:textColor="@android:color/black" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/main_dark_theme" />
+
+        <TextView
+            android:id="@+id/tv_connect_internet"
+            style="@style/mine_btn_text"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/fourty_dip"
+            android:background="@drawable/sharp_conn_net_btn"
+            android:text="连接网络" />
+
+        <TextView
+            android:id="@+id/tv_close_internet"
+            style="@style/mine_btn_text"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/fourty_dip"
+            android:background="@drawable/sharp_conn_net_btn"
+            android:text="断开连接" />
+
+        <TextView
+            android:id="@+id/tv_close_all_net"
+            style="@style/mine_btn_text"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/fourty_dip"
+            android:background="@color/main_theme"
+            android:text="断开所有连接"
+            android:textColor="@android:color/white" />
+
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/fourty_eight_dip"
+            android:layout_marginTop="@dimen/ten_dip"
+            android:orientation="vertical">
+
+
+            <com.pku.pkuapp.widget.MySlipSwitch
+                android:id="@+id/iv_open_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/fifteen_dip"
+                android:src="@drawable/menu_1" />
+
+            <TextView
+                style="@style/main_dark_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/fifteen_dip"
+                android:text="访问收费地址" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

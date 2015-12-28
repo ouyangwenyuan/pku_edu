@@ -9,8 +9,15 @@
 
     <com.pku.pkuapp.widget.SlideShowView
         android:layout_width="match_parent"
-        android:layout_height="@dimen/slide_pic_height"></com.pku.pkuapp.widget.SlideShowView>
+        android:layout_height="0dp"
+        android:layout_weight="1"></com.pku.pkuapp.widget.SlideShowView>
 
+    <GridView
+        android:id="@+id/gv_menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:numColumns="3"></GridView>
     <!--<FrameLayout-->
     <!--android:id="@+id/show_pictures"-->
     <!--android:layout_width="match_parent"-->
@@ -21,20 +28,20 @@
 
     <!--</FrameLayout>-->
 
-    <FrameLayout
-        android:id="@+id/show_menu"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    <!--<FrameLayout-->
+    <!--android:id="@+id/show_menu"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent">-->
 
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical">
+    <!--<FrameLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="center_vertical">-->
 
-            <include layout="@layout/frag_0_menu" />
+    <!--<include layout="@layout/frag_0_menu" />-->
 
-        </FrameLayout>
+    <!--</FrameLayout>-->
 
-    </FrameLayout>
+    <!--</FrameLayout>-->
 
 </LinearLayout>

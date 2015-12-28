@@ -19,16 +19,18 @@ public class MyApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        initImageLoader(this);
+        GlobalManager.getManager().init(this);
+        initPreim();
     }
 
-    private void initImageLoader(Context context) {
-//        BitmapDisplayer bitmapDisplayer = new FadeInBitmapDisplayer(context.getResources().getInteger(android.R.integer.config_shortAnimTime), true, false, false);
-        DisplayImageOptions displayImageOptions = new DisplayImageOptions.Builder().bitmapConfig(Bitmap.Config.RGB_565)
-                .cacheOnDisk(true).resetViewBeforeLoading(false)
-                .imageScaleType(ImageScaleType.IN_SAMPLE_INT).build();
-        ImageLoaderConfiguration imageLoaderConfiguration = new ImageLoaderConfiguration.Builder(context.getApplicationContext()).threadPriority(Thread.MAX_PRIORITY)
-                .defaultDisplayImageOptions(displayImageOptions).build();
-        ImageLoader.getInstance().init(imageLoaderConfiguration);
+    private void initPreim() {
+        if (MyLog.isDebuging()) {
+//            TestinAgentConfig config = new TestinAgentConfig.Builder(this)
+//                    .withReportOnlyWifi(true)     // 仅在 WiFi 下上报崩溃信息
+//                    .withQAMaster(true).withDebugModel(true)     // 开启摇一摇反馈
+//                    .withErrorActivity(true).withOpenCrash(true).withOpenEx(true).withLogCat(true)
+//                    .build();
+//            TestinAgent.init(config);
+        }
     }
 }

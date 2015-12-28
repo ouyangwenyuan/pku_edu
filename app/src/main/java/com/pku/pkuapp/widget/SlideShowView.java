@@ -22,6 +22,7 @@ import android.widget.LinearLayout;
 
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.pku.pkuapp.R;
+import com.pku.pkuapp.base.GlobalManager;
 import com.pku.pkuapp.base.MyLog;
 import com.pku.pkuapp.ui.WebViewActivity;
 
@@ -51,7 +52,7 @@ public class SlideShowView extends FrameLayout {
 
     //自定义轮播图的资源
     private String[] imageUrls;
-    //private List<PromptImage> imageUrls;
+    //    private List<PromptImage> imageUrls;
     //放轮播图片的ImageView 的list
     private List<ImageView> imageViewsList;
     //放圆点的View的list
@@ -152,12 +153,13 @@ public class SlideShowView extends FrameLayout {
             ImageView view = new ImageView(context);
             //final PromptImage prompt = imageUrls.get(i);
             // MyLog.i("image url = " + prompt.getImageUrl());
-            final String imageUrl = imageUrls[i];
+            final String imageUrl = imageUrls[i]; // imageUrls.get(i).getImageUrl();
             view.setTag(imageUrl);
             if (i == 0)//给一个默认图
-                view.setBackgroundResource(R.drawable.show_picture_1);
-            view.setScaleType(ScaleType.MATRIX);
+                view.setImageResource(R.drawable.show_picture_1);
+            view.setScaleType(ScaleType.FIT_XY);
             ImageLoader.getInstance().displayImage(imageUrl, view);
+//            GlobalManager.getManager().getBitmapUtils().display(view, String.valueOf(imageUrl));
             view.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -209,7 +211,8 @@ public class SlideShowView extends FrameLayout {
         public Object instantiateItem(View container, int position) {
             ImageView imageView = imageViewsList.get(position);
             MyLog.i("image url = " + imageView.getTag());
-            ImageLoader.getInstance().displayImage(imageView.getTag() + "", imageView);
+//            ImageLoader.getInstance().displayImage(imageView.getTag() + "", imageView);
+            //     GlobalManager.getManager().getBitmapUtils().display(imageView, String.valueOf(imageView.getTag()));
             ((ViewPager) container).addView(imageViewsList.get(position));
             return imageViewsList.get(position);
         }
@@ -348,10 +351,10 @@ public class SlideShowView extends FrameLayout {
                 // 这里一般调用服务端接口获取一组轮播图片，下面是从百度找的几个图片
 
                 imageUrls = new String[]{
-                        "http://img3.imgtn.bdimg.com/it/u=692639243,3604318862&fm=21&gp=0.jpg",
-                        "http://img3.imgtn.bdimg.com/it/u=2357463416,488347099&fm=21&gp=0.jpg",
-                        "http://img5.imgtn.bdimg.com/it/u=3094634523,283531232&fm=21&gp=0.jpg",
-                        "http://img2.imgtn.bdimg.com/it/u=1596085661,2778839647&fm=21&gp=0.jpg"
+                        "http://pic2.ooopic.com/01/03/51/25b1OOOPIC19.jpg",
+                        "http://img05.tooopen.com/images/20140331/sy_58023927541.jpg",
+                        "http://www.jpcai.com/upfiles/photo/200505/20050516171833707.jpg",
+                        "http://pic1.nipic.com/2008-08-12/200881211331729_2.jpg"
                 };
                 return true;
             } catch (Exception e) {

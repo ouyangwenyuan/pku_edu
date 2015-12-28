@@ -1,10 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
-    <TextView
-        android:layout_width="wrap_content"
+    android:orientation="vertical">
+
+    <include layout="@layout/public_title" />
+
+    <LinearLayout
+        android:id="@+id/ll_week_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="course tab"/>
-</FrameLayout>
+        android:layout_marginLeft="@dimen/fourty_eight_dip"
+        android:orientation="horizontal">
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/main_dark_theme" />
+
+    <ListView
+        android:id="@+id/lv_course_time"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:choiceMode="singleChoice"
+        android:dividerHeight="0.5dp"
+        android:fadingEdge="none"
+        android:fastScrollEnabled="false"
+        android:footerDividersEnabled="false"
+        android:headerDividersEnabled="false"
+        android:listSelector="@android:color/transparent"
+        android:scrollbars="none"
+        android:scrollingCache="false"></ListView>
+</LinearLayout>

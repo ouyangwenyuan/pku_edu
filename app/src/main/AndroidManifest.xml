@@ -23,12 +23,28 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.SettingActivity" />
-        <activity android:name=".ui.WebViewActivity" />
+        <activity
+            android:name=".ui.SettingActivity"
+            android:theme="@android:style/Theme.NoTitleBar" />
+        <activity
+            android:name=".ui.WebViewActivity"
+            android:theme="@android:style/Theme.NoTitleBar" />
+        <activity
+            android:name=".ui.LectureCalenderActivity"
+            android:theme="@android:style/Theme.NoTitleBar" />
+        <activity
+            android:name=".ui.InternShipActivity"
+            android:theme="@android:style/Theme.NoTitleBar" />
+        <activity
+            android:name=".ui.ActQueryActivity"
+            android:theme="@android:style/Theme.NoTitleBar" />
+        <activity
+            android:name=".ui.ClassQueryActivity"
+            android:theme="@android:style/Theme.NoTitleBar" />
         <!-- pre.im 摇一摇测试 -->
         <meta-data
             android:name="TESTIN_APPKEY"
-            android:value="9c05520b83195c723c37807805d8c753" />
+            android:value="49041bf654baa1d83666ca45f9841465" />
         <!--<meta-data-->
         <!--android:name="TESTIN_CHANNEL"-->
         <!--android:value="${UMENG_CHANNEL_VALUE}" />-->

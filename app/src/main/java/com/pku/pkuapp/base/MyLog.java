@@ -1,16 +1,12 @@
 package com.pku.pkuapp.base;
 
 
-import android.os.Build;
-
-import com.pku.pkuapp.BuildConfig;
-
 public class MyLog {
     public static boolean isDebuging() {
         return DEBUG_MODE;
     }
 
-    static boolean DEBUG_MODE = BuildConfig.DEBUG;
+    static boolean DEBUG_MODE = MyConfig.DEBUG_MODE;
     static String LOG_TAG = MyLog.class.getSimpleName();
     static long startTime = System.nanoTime();
     static String lastFileName = "";

@@ -44,7 +44,16 @@ public class MainFragment extends BaseFragment {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 MyLog.i("click position" + i);
-                Intent intent = new Intent(getActivity(), WebViewActivity.class);
+                Intent intent = null; //new Intent(getActivity(), WebViewActivity.class);
+                if (i == 1) {
+                    intent = new Intent(getActivity(), ClassQueryActivity.class);
+                } else if (i == 4) {
+                    intent = new Intent(getActivity(), ActQueryActivity.class);
+                } else if (i == menus.length - 1) {
+                    intent = new Intent(getActivity(), LectureCalenderActivity.class);
+                } else {
+                    intent = new Intent(getActivity(), InternShipActivity.class);
+                }
                 intent.putExtra("title", menus[i]);
                 startActivity(intent);
             }

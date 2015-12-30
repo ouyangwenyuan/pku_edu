@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/white"
     android:orientation="vertical">
 
     <include layout="@layout/public_title" />
@@ -13,4 +14,33 @@
 
     </com.pku.pkuapp.widget.SlideShowView>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:orientation="vertical">
+
+        <com.pku.pkuapp.widget.PagerSlidingTabView
+            android:id="@+id/pager_tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></com.pku.pkuapp.widget.PagerSlidingTabView>
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <!--<ListView-->
+        <!--android:id="@+id/lv_internship_list"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:choiceMode="singleChoice"-->
+        <!--android:dividerHeight="0.5dp"-->
+        <!--android:fadingEdge="none"-->
+        <!--android:fastScrollEnabled="false"-->
+        <!--android:footerDividersEnabled="false"-->
+        <!--android:headerDividersEnabled="false"-->
+        <!--android:listSelector="@android:color/transparent"-->
+        <!--android:scrollbars="none"-->
+        <!--android:scrollingCache="false"></ListView>-->
+    </LinearLayout>
 </LinearLayout>

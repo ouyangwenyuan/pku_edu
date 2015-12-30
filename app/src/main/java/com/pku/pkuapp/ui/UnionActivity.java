@@ -4,16 +4,10 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.BaseAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import com.pku.pkuapp.R;
 import com.pku.pkuapp.base.BaseActivity;
@@ -26,9 +20,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by admin on 15/12/29.
+ * Created by admin on 15/12/30.
  */
-public class InternShipActivity extends BaseActivity {
+public class UnionActivity extends BaseActivity {
     private ViewPager viewPager;
 
     @Override
@@ -55,14 +49,13 @@ public class InternShipActivity extends BaseActivity {
     private void initViewpager() {
         viewPager = (ViewPager) this.findViewById(R.id.viewpager);
         List<BaseFragment> fragments = new ArrayList<BaseFragment>();
-        for (int i = 0; i < 4; i++) {
-            BaseFragment fragment = new MysteryFragment();
-            fragments.add(fragment);
-        }
+        BaseFragment fragment = new MysteryFragment();
+        fragments.add(fragment);
+        BaseFragment fragment2 = new UnionIntroFragment();
+        fragments.add(fragment2);
 
-        viewPager.setAdapter(new MyFragmentPagerAdapter(getSupportFragmentManager(), fragments, MyConfig.internShip_tabs));
+        viewPager.setAdapter(new MyFragmentPagerAdapter(getSupportFragmentManager(), fragments, MyConfig.union_tabs));
         viewPager.setCurrentItem(0);
     }
-
 
 }

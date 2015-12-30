@@ -15,6 +15,7 @@ import android.widget.TextView;
 
 import com.pku.pkuapp.R;
 import com.pku.pkuapp.base.BaseFragment;
+import com.pku.pkuapp.base.MyConfig;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -22,18 +23,12 @@ import java.util.List;
 
 public class CourseFragment extends BaseFragment {
 
-    private static final String weeks[] = {"周一", "周二", "周三", "周四", "周五", "周六", "周日"};
-    private static final String times[] = {"08:00", "09:00", "10:10", "11:10", "13:00", "14:00", "15:10", "16:10", "17:10", "18:40", "19:40", "20:40",};
-
     public static class Course {
         public Date date;
         public String time;
         public int section;
         public int[] courseStates;
     }
-
-    private static final int courses[][] = {{0, 1, 0, 0, 0, 1, 0}, {0, 1, 1, 0, 1, 0, 1}, {1, 1, 0, 1, 0, 1, 0}, {1, 0, 0, 1, 0, 1, 1}, {0, 0, 1, 1, 0, 1, 0}, {0, 1, 0, 1, 1, 0, 0}, {0, 1, 1, 0, 1, 1, 0},
-            {0, 1, 0, 0, 0, 0, 1}, {0, 1, 1, 0, 1, 1, 0}, {1, 1, 0, 1, 0, 1, 1}, {1, 0, 0, 1, 0, 0, 1}, {0, 0, 1, 1, 0, 1, 0}};
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -59,11 +54,12 @@ public class CourseFragment extends BaseFragment {
     }
 
     private List<Course> fetchCourse() {
+        String[] times = MyConfig.times;
         List<Course> courseList = new ArrayList<Course>();
         for (int i = 0; i < times.length; i++) {
             Course course = new Course();
             course.time = times[i];
-            course.courseStates = courses[i];
+            course.courseStates = MyConfig.courses[i];
             course.section = i + 1;
             courseList.add(course);
         }
@@ -71,12 +67,14 @@ public class CourseFragment extends BaseFragment {
     }
 
     private void setWeek(LinearLayout weekParent) {
+        String[] weeks = MyConfig.weeks;
         for (int i = 0; i < weeks.length; i++) {
             TextView textView = new TextView(getActivity());
             LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
             params.weight = 1;
             params.gravity = Gravity.CENTER;
             textView.setLayoutParams(params);
+            textView.setGravity(Gravity.CENTER);
             textView.setText(weeks[i]);
             weekParent.addView(textView);
         }
@@ -146,6 +144,7 @@ public class CourseFragment extends BaseFragment {
                 params.gravity = Gravity.CENTER;
                 textView.setLayoutParams(params);
                 textView.setText(String.valueOf(sections[j]));
+                textView.setGravity(Gravity.CENTER);
                 if (sections[j] == 0) {
                     textView.setBackgroundColor(Color.RED);
                 } else {

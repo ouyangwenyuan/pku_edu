@@ -1,5 +1,6 @@
 package com.pku.pkuapp.ui;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
@@ -17,6 +18,7 @@ import android.widget.ListAdapter;
 import android.widget.TextView;
 
 import com.pku.pkuapp.R;
+import com.pku.pkuapp.base.BaseActivity;
 import com.pku.pkuapp.base.BaseFragment;
 import com.pku.pkuapp.base.MyLog;
 import com.pku.pkuapp.widget.SlideShowView;
@@ -24,6 +26,7 @@ import com.pku.pkuapp.widget.SlideShowView;
 public class MainFragment extends BaseFragment {
     private static final String menus[] = {"研究生会", "教室查询", "实习工作", "成绩查询", "百讲演出", "讲座信息"};
     private static final int menuIcons[] = {R.drawable.menu_1, R.drawable.menu_2, R.drawable.menu_3, R.drawable.menu_4, R.drawable.menu_5, R.drawable.menu_6};
+    private static final Class[] classes = {UnionActivity.class, ClassQueryActivity.class, InternShipActivity.class, MysteryActivity.class, ActQueryActivity.class, LectureCalenderActivity.class};
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -33,10 +36,6 @@ public class MainFragment extends BaseFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.frag_0, container, false);
-//        SlideShowView slideShowView = new SlideShowView(getActivity());
-//        slideShowView.setLayoutParams(new FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT, (int) getActivity().getResources().getDimension(R.dimen.slide_pic_height)));
-//        FrameLayout parentView = (FrameLayout) view.findViewById(R.id.show_pictures);
-//        parentView.addView(slideShowView);
         GridView gridView = (GridView) view.findViewById(R.id.gv_menu);
 //        gridView.setSelector(new ColorDrawable(Color.TRANSPARENT));
         gridView.setAdapter(new MenuAdapter(inflater));
@@ -44,16 +43,7 @@ public class MainFragment extends BaseFragment {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 MyLog.i("click position" + i);
-                Intent intent = null; //new Intent(getActivity(), WebViewActivity.class);
-                if (i == 1) {
-                    intent = new Intent(getActivity(), ClassQueryActivity.class);
-                } else if (i == 4) {
-                    intent = new Intent(getActivity(), ActQueryActivity.class);
-                } else if (i == menus.length - 1) {
-                    intent = new Intent(getActivity(), LectureCalenderActivity.class);
-                } else {
-                    intent = new Intent(getActivity(), InternShipActivity.class);
-                }
+                Intent intent = new Intent(getActivity(), classes[i]); //new Intent(getActivity(), WebViewActivity.class);
                 intent.putExtra("title", menus[i]);
                 startActivity(intent);
             }

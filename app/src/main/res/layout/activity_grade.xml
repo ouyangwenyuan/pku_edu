@@ -7,29 +7,14 @@
 
     <include layout="@layout/public_title" />
 
-    <TextView
-        android:id="@+id/tv_month"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/fourty_eight_dip"
-        android:gravity="center"
-        android:textSize="16dp" />
-
-    <LinearLayout
-        android:id="@+id/ll_week_parent"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-    </LinearLayout>
-
-    <com.pku.pkuapp.widget.CalendarView
+    <ImageView
         android:id="@+id/calendarView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="4"
         android:background="@drawable/show_picture_0">
 
-    </com.pku.pkuapp.widget.CalendarView>
+    </ImageView>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -37,7 +22,7 @@
         android:layout_weight="5">
 
         <ListView
-            android:id="@+id/lv_lecture"
+            android:id="@+id/lv_grade"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:choiceMode="singleChoice"
